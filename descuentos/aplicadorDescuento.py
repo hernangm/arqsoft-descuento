@@ -1,7 +1,6 @@
-from strategies.student import StudentDiscount
-from strategies.black_friday import BlackFridayDiscount
-from strategies.default import DefaultDiscount
-
+from .strategies.student import StudentDiscount
+from .strategies.black_friday import BlackFridayDiscount
+from .strategies.default import DefaultDiscount
 
 strategies = {
     "student": StudentDiscount(),

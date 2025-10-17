@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 IVA = 20.0
 IMPORTACION = 30.0

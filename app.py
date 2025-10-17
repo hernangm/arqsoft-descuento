@@ -1,5 +1,5 @@
-from descuentos import aplicarDescuento
-from impuestos import calcularImpuesto
+from descuentos.aplicadorDescuento import aplicarDescuento
+from impuestos.calculadorDeImpuestos import CalculadorImpuesto
 # INPUT
 # { "items": [
 #   { "id": 1, "product_category": "category_a", "price": 10.0 },
@@ -22,9 +22,9 @@ def facturar(ticket):
     item_taxes = []
     descs = []
     for i in ticket["items"]:
-        descs.append(aplicarDescuento(ticket["discount"], i["price"]))
-        tax = calcularImpuesto(i["product_category"], i["price"] - descs[-1])
-        item_taxes.append({"id": i["id"], "tax": tax})
+       descs.append(aplicarDescuento(ticket["discount"], i["price"]))
+       tax = CalculadorImpuesto().calcular_impuesto(i["product_category"], i["price"] - descs[-1])
+       item_taxes.append({"id": i["id"], "tax": tax})
 
     return {
         "subtotal": 0.0,
